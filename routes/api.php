@@ -19,16 +19,17 @@ use Illuminate\Http\Request;
 
 Route::get('generate-otp','OtpController@store');
 Route::get('get-otps','OtpController@index');
+Route::get('test','TestController@test');
 
 
 
 Route::group([
     'prefix' => 'auth'
 ], function () {
-     // Route::post('login', 'AuthController@login');
-
-
+    Route::post('login', 'AuthController@login');
+    Route::post('signup', 'AuthController@signup');
 });
+
 
 Route::post('logout', 'AuthController@logout');
 

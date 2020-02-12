@@ -12,7 +12,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
-    protected $connection = 'mongodb';
+    protected $connection = 'mongodbServer';
 
     /**
      * The attributes that are mass assignable.

@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'mongodb',
+    'default' => 'mongodbServer',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-        'mongodb' => [
+        'mongodbLocal' => [
             'driver' => 'mongodb',
             'host' => '127.0.0.1',
             'port' => 27017,
@@ -100,6 +100,20 @@ return [
                 // see https://www.php.net/manual/en/mongodb-driver-manager.construct.php under "Uri Options" for a list of complete parameters that you can use
 
                // 'database' => env('DB_AUTHENTICATION_DATABASE', 'admin'), // required with Mongo 3+
+            ],
+        ],
+        'mongodbServer' => [
+            'driver' => 'mongodb',
+            'host' => '103.62.144.51',
+            'port' => 27017,
+            'database' => 'offeringdiscount',
+            'username' => 'offer',
+            'password' => 'JKLoiu87#',
+            'options' => [
+                // here you can pass more settings to the Mongo Driver Manager
+                // see https://www.php.net/manual/en/mongodb-driver-manager.construct.php under "Uri Options" for a list of complete parameters that you can use
+
+                'database' => 'offeringdiscount', // required with Mongo 3+
             ],
         ],
 
