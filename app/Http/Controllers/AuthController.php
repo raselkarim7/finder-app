@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Jenssegers\Mongodb\Auth\User;
@@ -47,7 +48,7 @@ class AuthController extends Controller
         $user->mobile = $request->mobile;
         $user->company_name = $request->company_name;
         $user->company_address = $request->company_address;
-        $user->password = $request->password;
+        $user->password = Hash::make( $request->password );
         $user->save();
 
         return [
