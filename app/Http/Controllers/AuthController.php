@@ -12,12 +12,13 @@ class AuthController extends Controller
 {
     function login(Request $request) {
 
-        // dd($request->all());
-
         $mobile = $request->mobile;
         $password = $request->password;
-        $user = User::where('mobile', $mobile)->find();
-        dd($user);
+        $user = User::where('mobile', $mobile)->first();
+        if ($user === null) {
+            return 'Enter Correct mobile & password';
+        }
+
 
         return $user;
     }
@@ -35,6 +36,7 @@ class AuthController extends Controller
             ),
             'company_name' => 'required',
             'company_address' => 'required',
+            'email' => 'unique:users',
             'password' => 'required'
         ]);
 
