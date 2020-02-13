@@ -33,6 +33,7 @@ Route::group([
 
 Route::post('logout', 'AuthController@logout');
 
+Route::post('verify-otp','OtpController@verify');
 
 Route::group([
     'middleware' => 'jwt',
